@@ -1,7 +1,5 @@
-import pytesseract
-import cv2
+from pytesseract import image_to_string
+from cv2 import imread
 
 def read_captcha_number(file_path: str) -> str:
-    img = cv2.imread(file_path)
-    
-    return pytesseract.image_to_string(img, config='--psm 7 -c tessedit_char_whitelist=0123456789').strip()
+    return image_to_string(imread(file_path), config='--psm 7 -c tessedit_char_whitelist=0123456789').strip()
