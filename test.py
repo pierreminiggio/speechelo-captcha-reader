@@ -1,7 +1,17 @@
 from download_image_and_read_captcha import download_image_and_read_captcha
 
+pierre_repo = 'https://raw.githubusercontent.com/pierreminiggio/speechelo-captcha-reader-test-data/main/'
+png = '.png'
+
 tests = {
-    'https://raw.githubusercontent.com/pierreminiggio/speechelo-captcha-reader-test-data/main/1.png': '96426806'
+    pierre_repo + '1' + png: '96426806',
+    pierre_repo + '2' + png: '06382105',
+    pierre_repo + '3' + png: '34370923',
+    pierre_repo + '4' + png: '91895293',
+    pierre_repo + '5' + png: '38326032',
+    pierre_repo + '6' + png: '31513634',
+    pierre_repo + '7' + png: '21789966',
+    pierre_repo + '8' + png: '13173183'
 }
 
 all_tests_ok = True
