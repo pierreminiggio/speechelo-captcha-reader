@@ -39,11 +39,12 @@ def is_black_pixel(pixel_color: Tuple[int]) -> bool:
 
 def figure_out_slicing_start_x_coordinate(first_black_pixel: Tuple[int], image: Image, slice_image_name_prefix: str) -> int:
     normal_slicing_start_x_coordinate = first_black_pixel[0] - 1
+    
     return normal_slicing_start_x_coordinate - 1 if is_back_pixel_part_of_number_1(image, normal_slicing_start_x_coordinate, slice_image_name_prefix) else normal_slicing_start_x_coordinate
 
 def is_back_pixel_part_of_number_1(image: Image, normal_slicing_start_x_coordinate: int, slice_image_name_prefix: str) -> bool:
     image_path = get_single_image_slice(image, normal_slicing_start_x_coordinate, slice_image_name_prefix, 0)
-    
+
     return read_captcha_number(image_path) == '1'
 
 def get_image_slices(image: Image, slicing_start_x_coordinate: int, slice_image_name_prefix: str) -> List[str]:
