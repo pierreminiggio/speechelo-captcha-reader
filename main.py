@@ -1,4 +1,5 @@
 from download_image import download_image
+from slice_captcha_numbers import slice_captcha_numbers
 import sys
 
 args = sys.argv
@@ -8,10 +9,7 @@ if len(args) != 2:
     sys.exit()
 
 image_path = download_image(args[1])
+captcha_numbers = slice_captcha_numbers(image_path)
+print(captcha_numbers)
 
-print(image_path)
-
-# ^ Fait, télécharger l'image
-
-# TODO découper l'image
 # TODO Donner les petites images
