@@ -22,7 +22,11 @@ jobs:
       - run: pip install requests pytesseract opencv-python
         env:
           link: ${{ github.event.inputs.link }}
-      - run: python main.py $link
+      - run: python main.py $link > captcha.txt
         env:
           link: ${{ github.event.inputs.link }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: captcha.txt
+          path: captcha.txt
           
