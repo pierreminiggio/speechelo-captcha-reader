@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v2
       - run: sudo apt update
       - run: echo $link;
-      - run: pip install requests pytesseract
+      - run: pip install requests pytesseract cv2
         env:
           link: ${{ github.event.inputs.link }}
       - run: python main.py $link
