@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+    inputs:
+      link:
+        description: "Captcha Link"
+        required: true
+        default: "https://app.blasteronline.com/assets/captcha/1652640112.293.jpg"
+name: Get Captcha
+jobs:
+  get:
+    name: Get Captcha
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8']
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-python@v2
+      - run: sudo apt update
+      - run: echo $link;
+        env:
+          link: ${{ github.event.inputs.link }}
+          
