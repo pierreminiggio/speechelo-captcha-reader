@@ -20,7 +20,7 @@ jobs:
       - run: echo $link;
         env:
           link: ${{ github.event.inputs.link }}
-      - run: python main.php $link
+      - run: python main.py $link
         env:
           link: ${{ github.event.inputs.link }}
           
