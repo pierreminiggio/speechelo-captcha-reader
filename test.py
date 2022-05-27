@@ -11,7 +11,8 @@ tests = {
     pierre_repo + '5' + png: '38326032',
     pierre_repo + '6' + png: '31513634',
     pierre_repo + '7' + png: '21789966',
-    pierre_repo + '8' + png: '13173183'
+    pierre_repo + '8' + png: '13173183',
+    pierre_repo + '9' + png: '95297053'
 }
 
 all_tests_ok = True
